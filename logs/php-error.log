@@ -1,0 +1,285 @@
+[01-Jul-2026 13:22:00 Africa/Abidjan] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: mixed named and positional parameters in C:\wamp64\www\OIACAFECACAO\config\database.php:35
+Stack trace:
+#0 C:\wamp64\www\OIACAFECACAO\config\database.php(35): PDO->prepare('UPDATE users SE...')
+#1 C:\wamp64\www\OIACAFECACAO\config\database.php(66): Database->query('UPDATE users SE...', Array)
+#2 C:\wamp64\www\OIACAFECACAO\models\User.php(55): Database->update('users', Array, 'id = ?', Array)
+#3 C:\wamp64\www\OIACAFECACAO\admin\login.php(11): User->login('admin@oia-cafec...', 'password')
+#4 {main}
+  thrown in C:\wamp64\www\OIACAFECACAO\config\database.php on line 35
+[01-Jul-2026 18:22:03 Africa/Abidjan] PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\wamp64\www\OIACAFECACAO\models\Newsletter.php on line 97
+[01-Jul-2026 18:22:03 Africa/Abidjan] PHP Stack trace:
+[01-Jul-2026 18:22:03 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[01-Jul-2026 18:22:03 Africa/Abidjan] PHP   2. HomeController->newsletterSubscribe() C:\wamp64\www\OIACAFECACAO\index.php:21
+[01-Jul-2026 18:22:03 Africa/Abidjan] PHP   3. Newsletter->subscribePublic($email = 'djiehilevyjonathan@gmail.com', $firstName = '', $lastName = '') C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:209
+[01-Jul-2026 18:22:03 Africa/Abidjan] PHP   4. Newsletter->sendConfirmationEmail($subscriber = ['id' => 1, 'email' => 'djiehilevyjonathan@gmail.com', 'first_name' => '', 'last_name' => '', 'token' => 'd50d3f73ef0a78ab08faac9913ae377296150a214b2dc6d3d44685aa1dc2c8ed', 'is_active' => 1, 'is_confirmed' => 0, 'ip_address' => '127.0.0.1', 'subscribed_at' => '2026-07-01 18:22:01', 'confirmed_at' => NULL, 'unsubscribed_at' => NULL, 'date_up' => '2026-07-01 18:22:01']) C:\wamp64\www\OIACAFECACAO\models\Newsletter.php:42
+[01-Jul-2026 18:22:03 Africa/Abidjan] PHP   5. mail($to = 'djiehilevyjonathan@gmail.com', $subject = 'Confirmez votre inscription à la newsletter Organisation Interprofessionnelle Agricole Café-Cacao', $message = '<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\'UTF-8\'>\n    <title>Confirmation d\'inscription</title>\n    <style>\n        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }\n        .container { max-width: 600px; margin: 0 auto; padding: 20px; }\n        .header { background: #8a4e00; color: white; padding: 20px; text-align: center; }\n        .content { padding: 20px; background: #f9f9f9; }\n        .button { display: inline-block; background: #8a4e00; color: white; padding: 12px 24px; te'..., $additional_headers = 'From: Organisation Interprofessionnelle Agricole Café-Cacao <contact@oia-cafecacao.ci>\r\nContent-Type: text/html; charset=UTF-8\r\n') C:\wamp64\www\OIACAFECACAO\models\Newsletter.php:97
+[01-Jul-2026 18:22:03 Africa/Abidjan] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at C:\wamp64\www\OIACAFECACAO\models\Newsletter.php:97) in C:\wamp64\www\OIACAFECACAO\includes\functions.php on line 157
+[01-Jul-2026 18:22:03 Africa/Abidjan] PHP Stack trace:
+[01-Jul-2026 18:22:03 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[01-Jul-2026 18:22:03 Africa/Abidjan] PHP   2. HomeController->newsletterSubscribe() C:\wamp64\www\OIACAFECACAO\index.php:21
+[01-Jul-2026 18:22:03 Africa/Abidjan] PHP   3. send_json_response($data = ['success' => TRUE, 'message' => 'Merci ! Un email de confirmation a été envoyé à votre adresse email.'], $status_code = *uninitialized*) C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:217
+[01-Jul-2026 18:22:03 Africa/Abidjan] PHP   4. http_response_code($response_code = 200) C:\wamp64\www\OIACAFECACAO\includes\functions.php:157
+[01-Jul-2026 18:22:03 Africa/Abidjan] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\wamp64\www\OIACAFECACAO\models\Newsletter.php:97) in C:\wamp64\www\OIACAFECACAO\includes\functions.php on line 158
+[01-Jul-2026 18:22:03 Africa/Abidjan] PHP Stack trace:
+[01-Jul-2026 18:22:03 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[01-Jul-2026 18:22:03 Africa/Abidjan] PHP   2. HomeController->newsletterSubscribe() C:\wamp64\www\OIACAFECACAO\index.php:21
+[01-Jul-2026 18:22:03 Africa/Abidjan] PHP   3. send_json_response($data = ['success' => TRUE, 'message' => 'Merci ! Un email de confirmation a été envoyé à votre adresse email.'], $status_code = *uninitialized*) C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:217
+[01-Jul-2026 18:22:03 Africa/Abidjan] PHP   4. header($header = 'Content-Type: application/json') C:\wamp64\www\OIACAFECACAO\includes\functions.php:158
+[01-Jul-2026 18:22:13 Africa/Abidjan] PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\wamp64\www\OIACAFECACAO\models\Newsletter.php on line 97
+[01-Jul-2026 18:22:13 Africa/Abidjan] PHP Stack trace:
+[01-Jul-2026 18:22:13 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[01-Jul-2026 18:22:13 Africa/Abidjan] PHP   2. HomeController->newsletterSubscribe() C:\wamp64\www\OIACAFECACAO\index.php:21
+[01-Jul-2026 18:22:13 Africa/Abidjan] PHP   3. Newsletter->subscribePublic($email = 'djiehilevyjonathan@gmail.com', $firstName = '', $lastName = '') C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:209
+[01-Jul-2026 18:22:13 Africa/Abidjan] PHP   4. Newsletter->sendConfirmationEmail($subscriber = ['id' => 1, 'email' => 'djiehilevyjonathan@gmail.com', 'first_name' => '', 'last_name' => '', 'token' => 'd50d3f73ef0a78ab08faac9913ae377296150a214b2dc6d3d44685aa1dc2c8ed', 'is_active' => 1, 'is_confirmed' => 0, 'ip_address' => '127.0.0.1', 'subscribed_at' => '2026-07-01 18:22:01', 'confirmed_at' => NULL, 'unsubscribed_at' => NULL, 'date_up' => '2026-07-01 18:22:01']) C:\wamp64\www\OIACAFECACAO\models\Newsletter.php:21
+[01-Jul-2026 18:22:13 Africa/Abidjan] PHP   5. mail($to = 'djiehilevyjonathan@gmail.com', $subject = 'Confirmez votre inscription à la newsletter Organisation Interprofessionnelle Agricole Café-Cacao', $message = '<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\'UTF-8\'>\n    <title>Confirmation d\'inscription</title>\n    <style>\n        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }\n        .container { max-width: 600px; margin: 0 auto; padding: 20px; }\n        .header { background: #8a4e00; color: white; padding: 20px; text-align: center; }\n        .content { padding: 20px; background: #f9f9f9; }\n        .button { display: inline-block; background: #8a4e00; color: white; padding: 12px 24px; te'..., $additional_headers = 'From: Organisation Interprofessionnelle Agricole Café-Cacao <contact@oia-cafecacao.ci>\r\nContent-Type: text/html; charset=UTF-8\r\n') C:\wamp64\www\OIACAFECACAO\models\Newsletter.php:97
+[01-Jul-2026 18:22:13 Africa/Abidjan] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at C:\wamp64\www\OIACAFECACAO\models\Newsletter.php:97) in C:\wamp64\www\OIACAFECACAO\includes\functions.php on line 157
+[01-Jul-2026 18:22:13 Africa/Abidjan] PHP Stack trace:
+[01-Jul-2026 18:22:13 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[01-Jul-2026 18:22:13 Africa/Abidjan] PHP   2. HomeController->newsletterSubscribe() C:\wamp64\www\OIACAFECACAO\index.php:21
+[01-Jul-2026 18:22:13 Africa/Abidjan] PHP   3. send_json_response($data = ['success' => TRUE, 'message' => 'Un email de confirmation a été renvoyé à votre adresse email.'], $status_code = *uninitialized*) C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:212
+[01-Jul-2026 18:22:13 Africa/Abidjan] PHP   4. http_response_code($response_code = 200) C:\wamp64\www\OIACAFECACAO\includes\functions.php:157
+[01-Jul-2026 18:22:13 Africa/Abidjan] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\wamp64\www\OIACAFECACAO\models\Newsletter.php:97) in C:\wamp64\www\OIACAFECACAO\includes\functions.php on line 158
+[01-Jul-2026 18:22:13 Africa/Abidjan] PHP Stack trace:
+[01-Jul-2026 18:22:13 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[01-Jul-2026 18:22:13 Africa/Abidjan] PHP   2. HomeController->newsletterSubscribe() C:\wamp64\www\OIACAFECACAO\index.php:21
+[01-Jul-2026 18:22:13 Africa/Abidjan] PHP   3. send_json_response($data = ['success' => TRUE, 'message' => 'Un email de confirmation a été renvoyé à votre adresse email.'], $status_code = *uninitialized*) C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:212
+[01-Jul-2026 18:22:13 Africa/Abidjan] PHP   4. header($header = 'Content-Type: application/json') C:\wamp64\www\OIACAFECACAO\includes\functions.php:158
+[01-Jul-2026 18:28:14 Africa/Abidjan] PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\wamp64\www\OIACAFECACAO\models\Newsletter.php on line 113
+[01-Jul-2026 18:28:14 Africa/Abidjan] PHP Stack trace:
+[01-Jul-2026 18:28:14 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[01-Jul-2026 18:28:14 Africa/Abidjan] PHP   2. HomeController->newsletterSubscribe() C:\wamp64\www\OIACAFECACAO\index.php:21
+[01-Jul-2026 18:28:14 Africa/Abidjan] PHP   3. Newsletter->subscribePublic($email = 'djiehilevyjonathan7@gmail.com', $firstName = '', $lastName = '') C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:209
+[01-Jul-2026 18:28:14 Africa/Abidjan] PHP   4. Newsletter->sendConfirmationEmail($subscriber = ['id' => 2, 'email' => 'djiehilevyjonathan7@gmail.com', 'first_name' => '', 'last_name' => '', 'token' => '841bb58772fbf24143845dfab4e43ffd1b886e378b9de56d93a5f752dc8068e5', 'is_active' => 1, 'is_confirmed' => 0, 'ip_address' => '127.0.0.1', 'subscribed_at' => '2026-07-01 18:28:12', 'confirmed_at' => NULL, 'unsubscribed_at' => NULL, 'date_up' => '2026-07-01 18:28:12']) C:\wamp64\www\OIACAFECACAO\models\Newsletter.php:49
+[01-Jul-2026 18:28:14 Africa/Abidjan] PHP   5. mail($to = 'djiehilevyjonathan7@gmail.com', $subject = 'Confirmez votre inscription à la newsletter Organisation Interprofessionnelle Agricole Café-Cacao', $message = '<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\'UTF-8\'>\n    <title>Confirmation d\'inscription</title>\n    <style>\n        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }\n        .container { max-width: 600px; margin: 0 auto; padding: 20px; }\n        .header { background: #8a4e00; color: white; padding: 20px; text-align: center; }\n        .content { padding: 20px; background: #f9f9f9; }\n        .button { display: inline-block; background: #8a4e00; color: white; padding: 12px 24px; te'..., $additional_headers = 'From: Organisation Interprofessionnelle Agricole Café-Cacao <contact@oia-cafecacao.ci>\r\nContent-Type: text/html; charset=UTF-8\r\n') C:\wamp64\www\OIACAFECACAO\models\Newsletter.php:113
+[01-Jul-2026 18:28:14 Africa/Abidjan] Newsletter email error: Échec de l'envoi de l'email.
+[01-Jul-2026 18:28:14 Africa/Abidjan] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at C:\wamp64\www\OIACAFECACAO\models\Newsletter.php:113) in C:\wamp64\www\OIACAFECACAO\includes\functions.php on line 157
+[01-Jul-2026 18:28:14 Africa/Abidjan] PHP Stack trace:
+[01-Jul-2026 18:28:14 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[01-Jul-2026 18:28:14 Africa/Abidjan] PHP   2. HomeController->newsletterSubscribe() C:\wamp64\www\OIACAFECACAO\index.php:21
+[01-Jul-2026 18:28:14 Africa/Abidjan] PHP   3. send_json_response($data = ['success' => TRUE, 'message' => 'Merci ! Votre inscription a été enregistrée ! (Email de confirmation non disponible sur ce serveur, mais vous pouvez confirmer via l\'administration.)'], $status_code = *uninitialized*) C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:217
+[01-Jul-2026 18:28:14 Africa/Abidjan] PHP   4. http_response_code($response_code = 200) C:\wamp64\www\OIACAFECACAO\includes\functions.php:157
+[01-Jul-2026 18:28:14 Africa/Abidjan] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\wamp64\www\OIACAFECACAO\models\Newsletter.php:113) in C:\wamp64\www\OIACAFECACAO\includes\functions.php on line 158
+[01-Jul-2026 18:28:14 Africa/Abidjan] PHP Stack trace:
+[01-Jul-2026 18:28:14 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[01-Jul-2026 18:28:14 Africa/Abidjan] PHP   2. HomeController->newsletterSubscribe() C:\wamp64\www\OIACAFECACAO\index.php:21
+[01-Jul-2026 18:28:14 Africa/Abidjan] PHP   3. send_json_response($data = ['success' => TRUE, 'message' => 'Merci ! Votre inscription a été enregistrée ! (Email de confirmation non disponible sur ce serveur, mais vous pouvez confirmer via l\'administration.)'], $status_code = *uninitialized*) C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:217
+[01-Jul-2026 18:28:14 Africa/Abidjan] PHP   4. header($header = 'Content-Type: application/json') C:\wamp64\www\OIACAFECACAO\includes\functions.php:158
+[01-Jul-2026 18:28:20 Africa/Abidjan] PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\wamp64\www\OIACAFECACAO\models\Newsletter.php on line 113
+[01-Jul-2026 18:28:20 Africa/Abidjan] PHP Stack trace:
+[01-Jul-2026 18:28:20 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[01-Jul-2026 18:28:20 Africa/Abidjan] PHP   2. HomeController->newsletterSubscribe() C:\wamp64\www\OIACAFECACAO\index.php:21
+[01-Jul-2026 18:28:20 Africa/Abidjan] PHP   3. Newsletter->subscribePublic($email = 'djiehilevyjonathan7@gmail.com', $firstName = '', $lastName = '') C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:209
+[01-Jul-2026 18:28:20 Africa/Abidjan] PHP   4. Newsletter->sendConfirmationEmail($subscriber = ['id' => 2, 'email' => 'djiehilevyjonathan7@gmail.com', 'first_name' => '', 'last_name' => '', 'token' => '841bb58772fbf24143845dfab4e43ffd1b886e378b9de56d93a5f752dc8068e5', 'is_active' => 1, 'is_confirmed' => 0, 'ip_address' => '127.0.0.1', 'subscribed_at' => '2026-07-01 18:28:12', 'confirmed_at' => NULL, 'unsubscribed_at' => NULL, 'date_up' => '2026-07-01 18:28:12']) C:\wamp64\www\OIACAFECACAO\models\Newsletter.php:22
+[01-Jul-2026 18:28:20 Africa/Abidjan] PHP   5. mail($to = 'djiehilevyjonathan7@gmail.com', $subject = 'Confirmez votre inscription à la newsletter Organisation Interprofessionnelle Agricole Café-Cacao', $message = '<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\'UTF-8\'>\n    <title>Confirmation d\'inscription</title>\n    <style>\n        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }\n        .container { max-width: 600px; margin: 0 auto; padding: 20px; }\n        .header { background: #8a4e00; color: white; padding: 20px; text-align: center; }\n        .content { padding: 20px; background: #f9f9f9; }\n        .button { display: inline-block; background: #8a4e00; color: white; padding: 12px 24px; te'..., $additional_headers = 'From: Organisation Interprofessionnelle Agricole Café-Cacao <contact@oia-cafecacao.ci>\r\nContent-Type: text/html; charset=UTF-8\r\n') C:\wamp64\www\OIACAFECACAO\models\Newsletter.php:113
+[01-Jul-2026 18:28:20 Africa/Abidjan] Newsletter email error: Échec de l'envoi de l'email.
+[01-Jul-2026 18:28:20 Africa/Abidjan] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at C:\wamp64\www\OIACAFECACAO\models\Newsletter.php:113) in C:\wamp64\www\OIACAFECACAO\includes\functions.php on line 157
+[01-Jul-2026 18:28:20 Africa/Abidjan] PHP Stack trace:
+[01-Jul-2026 18:28:20 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[01-Jul-2026 18:28:20 Africa/Abidjan] PHP   2. HomeController->newsletterSubscribe() C:\wamp64\www\OIACAFECACAO\index.php:21
+[01-Jul-2026 18:28:20 Africa/Abidjan] PHP   3. send_json_response($data = ['success' => TRUE, 'message' => 'Un email de confirmation a été renvoyé à votre adresse email.'], $status_code = *uninitialized*) C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:212
+[01-Jul-2026 18:28:20 Africa/Abidjan] PHP   4. http_response_code($response_code = 200) C:\wamp64\www\OIACAFECACAO\includes\functions.php:157
+[01-Jul-2026 18:28:20 Africa/Abidjan] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\wamp64\www\OIACAFECACAO\models\Newsletter.php:113) in C:\wamp64\www\OIACAFECACAO\includes\functions.php on line 158
+[01-Jul-2026 18:28:20 Africa/Abidjan] PHP Stack trace:
+[01-Jul-2026 18:28:20 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[01-Jul-2026 18:28:20 Africa/Abidjan] PHP   2. HomeController->newsletterSubscribe() C:\wamp64\www\OIACAFECACAO\index.php:21
+[01-Jul-2026 18:28:20 Africa/Abidjan] PHP   3. send_json_response($data = ['success' => TRUE, 'message' => 'Un email de confirmation a été renvoyé à votre adresse email.'], $status_code = *uninitialized*) C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:212
+[01-Jul-2026 18:28:20 Africa/Abidjan] PHP   4. header($header = 'Content-Type: application/json') C:\wamp64\www\OIACAFECACAO\includes\functions.php:158
+[01-Jul-2026 18:28:32 Africa/Abidjan] PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\wamp64\www\OIACAFECACAO\models\Newsletter.php on line 113
+[01-Jul-2026 18:28:32 Africa/Abidjan] PHP Stack trace:
+[01-Jul-2026 18:28:32 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[01-Jul-2026 18:28:32 Africa/Abidjan] PHP   2. HomeController->newsletterSubscribe() C:\wamp64\www\OIACAFECACAO\index.php:21
+[01-Jul-2026 18:28:32 Africa/Abidjan] PHP   3. Newsletter->subscribePublic($email = 'djiehilevyjonathan7@gmail.com', $firstName = '', $lastName = '') C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:209
+[01-Jul-2026 18:28:32 Africa/Abidjan] PHP   4. Newsletter->sendConfirmationEmail($subscriber = ['id' => 2, 'email' => 'djiehilevyjonathan7@gmail.com', 'first_name' => '', 'last_name' => '', 'token' => '841bb58772fbf24143845dfab4e43ffd1b886e378b9de56d93a5f752dc8068e5', 'is_active' => 1, 'is_confirmed' => 0, 'ip_address' => '127.0.0.1', 'subscribed_at' => '2026-07-01 18:28:12', 'confirmed_at' => NULL, 'unsubscribed_at' => NULL, 'date_up' => '2026-07-01 18:28:12']) C:\wamp64\www\OIACAFECACAO\models\Newsletter.php:22
+[01-Jul-2026 18:28:32 Africa/Abidjan] PHP   5. mail($to = 'djiehilevyjonathan7@gmail.com', $subject = 'Confirmez votre inscription à la newsletter Organisation Interprofessionnelle Agricole Café-Cacao', $message = '<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\'UTF-8\'>\n    <title>Confirmation d\'inscription</title>\n    <style>\n        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }\n        .container { max-width: 600px; margin: 0 auto; padding: 20px; }\n        .header { background: #8a4e00; color: white; padding: 20px; text-align: center; }\n        .content { padding: 20px; background: #f9f9f9; }\n        .button { display: inline-block; background: #8a4e00; color: white; padding: 12px 24px; te'..., $additional_headers = 'From: Organisation Interprofessionnelle Agricole Café-Cacao <contact@oia-cafecacao.ci>\r\nContent-Type: text/html; charset=UTF-8\r\n') C:\wamp64\www\OIACAFECACAO\models\Newsletter.php:113
+[01-Jul-2026 18:28:32 Africa/Abidjan] Newsletter email error: Échec de l'envoi de l'email.
+[01-Jul-2026 18:28:32 Africa/Abidjan] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at C:\wamp64\www\OIACAFECACAO\models\Newsletter.php:113) in C:\wamp64\www\OIACAFECACAO\includes\functions.php on line 157
+[01-Jul-2026 18:28:32 Africa/Abidjan] PHP Stack trace:
+[01-Jul-2026 18:28:32 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[01-Jul-2026 18:28:32 Africa/Abidjan] PHP   2. HomeController->newsletterSubscribe() C:\wamp64\www\OIACAFECACAO\index.php:21
+[01-Jul-2026 18:28:32 Africa/Abidjan] PHP   3. send_json_response($data = ['success' => TRUE, 'message' => 'Un email de confirmation a été renvoyé à votre adresse email.'], $status_code = *uninitialized*) C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:212
+[01-Jul-2026 18:28:32 Africa/Abidjan] PHP   4. http_response_code($response_code = 200) C:\wamp64\www\OIACAFECACAO\includes\functions.php:157
+[01-Jul-2026 18:28:32 Africa/Abidjan] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\wamp64\www\OIACAFECACAO\models\Newsletter.php:113) in C:\wamp64\www\OIACAFECACAO\includes\functions.php on line 158
+[01-Jul-2026 18:28:32 Africa/Abidjan] PHP Stack trace:
+[01-Jul-2026 18:28:32 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[01-Jul-2026 18:28:32 Africa/Abidjan] PHP   2. HomeController->newsletterSubscribe() C:\wamp64\www\OIACAFECACAO\index.php:21
+[01-Jul-2026 18:28:32 Africa/Abidjan] PHP   3. send_json_response($data = ['success' => TRUE, 'message' => 'Un email de confirmation a été renvoyé à votre adresse email.'], $status_code = *uninitialized*) C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:212
+[01-Jul-2026 18:28:32 Africa/Abidjan] PHP   4. header($header = 'Content-Type: application/json') C:\wamp64\www\OIACAFECACAO\includes\functions.php:158
+[02-Jul-2026 15:00:24 Africa/Abidjan] PHP Fatal error:  Cannot redeclare HomeController::photos() in C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php on line 173
+[02-Jul-2026 15:00:24 Africa/Abidjan] PHP Stack trace:
+[02-Jul-2026 15:00:24 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[02-Jul-2026 15:00:24 Africa/Abidjan] PHP   2. {closure:C:\wamp64\www\OIACAFECACAO\includes\init.php:11-28}($class_name = 'HomeController') C:\wamp64\www\OIACAFECACAO\index.php:34
+[02-Jul-2026 15:00:34 Africa/Abidjan] PHP Fatal error:  Cannot redeclare HomeController::photos() in C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php on line 173
+[02-Jul-2026 15:00:34 Africa/Abidjan] PHP Stack trace:
+[02-Jul-2026 15:00:34 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[02-Jul-2026 15:00:34 Africa/Abidjan] PHP   2. {closure:C:\wamp64\www\OIACAFECACAO\includes\init.php:11-28}($class_name = 'HomeController') C:\wamp64\www\OIACAFECACAO\index.php:34
+[03-Jul-2026 13:13:41 Africa/Abidjan] PHP Fatal error:  Uncaught Error: Call to undefined method Category::count() in C:\wamp64\www\OIACAFECACAO\admin\index.php:24
+Stack trace:
+#0 {main}
+  thrown in C:\wamp64\www\OIACAFECACAO\admin\index.php on line 24
+[03-Jul-2026 13:27:03 Africa/Abidjan] PHP Fatal error:  Uncaught Error: Call to undefined method Category::count() in C:\wamp64\www\OIACAFECACAO\admin\index.php:24
+Stack trace:
+#0 {main}
+  thrown in C:\wamp64\www\OIACAFECACAO\admin\index.php on line 24
+[03-Jul-2026 13:28:42 Africa/Abidjan] PHP Fatal error:  Uncaught Error: Call to undefined method Category::count() in C:\wamp64\www\OIACAFECACAO\admin\index.php:24
+Stack trace:
+#0 {main}
+  thrown in C:\wamp64\www\OIACAFECACAO\admin\index.php on line 24
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP Warning:  Undefined array key "actions" in C:\wamp64\www\OIACAFECACAO\admin\filieres.php on line 217
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP Stack trace:
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP   2. require_once() C:\wamp64\www\OIACAFECACAO\index.php:66
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP Deprecated:  base64_encode(): Passing null to parameter #1 ($string) of type string is deprecated in C:\wamp64\www\OIACAFECACAO\admin\filieres.php on line 217
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP Stack trace:
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP   2. require_once() C:\wamp64\www\OIACAFECACAO\index.php:66
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP   3. base64_encode($string = NULL) C:\wamp64\www\OIACAFECACAO\admin\filieres.php:217
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP Warning:  Undefined array key "production_share" in C:\wamp64\www\OIACAFECACAO\admin\filieres.php on line 217
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP Stack trace:
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP   2. require_once() C:\wamp64\www\OIACAFECACAO\index.php:66
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP Warning:  Undefined array key "actions" in C:\wamp64\www\OIACAFECACAO\admin\filieres.php on line 217
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP Stack trace:
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP   2. require_once() C:\wamp64\www\OIACAFECACAO\index.php:66
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP Deprecated:  base64_encode(): Passing null to parameter #1 ($string) of type string is deprecated in C:\wamp64\www\OIACAFECACAO\admin\filieres.php on line 217
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP Stack trace:
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP   2. require_once() C:\wamp64\www\OIACAFECACAO\index.php:66
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP   3. base64_encode($string = NULL) C:\wamp64\www\OIACAFECACAO\admin\filieres.php:217
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP Warning:  Undefined array key "production_share" in C:\wamp64\www\OIACAFECACAO\admin\filieres.php on line 217
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP Stack trace:
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP   2. require_once() C:\wamp64\www\OIACAFECACAO\index.php:66
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP Warning:  Undefined array key "actions" in C:\wamp64\www\OIACAFECACAO\admin\filieres.php on line 217
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP Stack trace:
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP   2. require_once() C:\wamp64\www\OIACAFECACAO\index.php:66
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP Deprecated:  base64_encode(): Passing null to parameter #1 ($string) of type string is deprecated in C:\wamp64\www\OIACAFECACAO\admin\filieres.php on line 217
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP Stack trace:
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP   2. require_once() C:\wamp64\www\OIACAFECACAO\index.php:66
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP   3. base64_encode($string = NULL) C:\wamp64\www\OIACAFECACAO\admin\filieres.php:217
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP Warning:  Undefined array key "production_share" in C:\wamp64\www\OIACAFECACAO\admin\filieres.php on line 217
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP Stack trace:
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[03-Jul-2026 15:17:13 Africa/Abidjan] PHP   2. require_once() C:\wamp64\www\OIACAFECACAO\index.php:66
+[03-Jul-2026 15:17:37 Africa/Abidjan] PHP Deprecated:  base64_encode(): Passing null to parameter #1 ($string) of type string is deprecated in C:\wamp64\www\OIACAFECACAO\admin\filieres.php on line 217
+[03-Jul-2026 15:17:37 Africa/Abidjan] PHP Stack trace:
+[03-Jul-2026 15:17:37 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[03-Jul-2026 15:17:37 Africa/Abidjan] PHP   2. require_once() C:\wamp64\www\OIACAFECACAO\index.php:66
+[03-Jul-2026 15:17:37 Africa/Abidjan] PHP   3. base64_encode($string = NULL) C:\wamp64\www\OIACAFECACAO\admin\filieres.php:217
+[03-Jul-2026 15:17:37 Africa/Abidjan] PHP Deprecated:  base64_encode(): Passing null to parameter #1 ($string) of type string is deprecated in C:\wamp64\www\OIACAFECACAO\admin\filieres.php on line 217
+[03-Jul-2026 15:17:37 Africa/Abidjan] PHP Stack trace:
+[03-Jul-2026 15:17:37 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[03-Jul-2026 15:17:37 Africa/Abidjan] PHP   2. require_once() C:\wamp64\www\OIACAFECACAO\index.php:66
+[03-Jul-2026 15:17:37 Africa/Abidjan] PHP   3. base64_encode($string = NULL) C:\wamp64\www\OIACAFECACAO\admin\filieres.php:217
+[03-Jul-2026 15:17:37 Africa/Abidjan] PHP Deprecated:  base64_encode(): Passing null to parameter #1 ($string) of type string is deprecated in C:\wamp64\www\OIACAFECACAO\admin\filieres.php on line 217
+[03-Jul-2026 15:17:37 Africa/Abidjan] PHP Stack trace:
+[03-Jul-2026 15:17:37 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[03-Jul-2026 15:17:37 Africa/Abidjan] PHP   2. require_once() C:\wamp64\www\OIACAFECACAO\index.php:66
+[03-Jul-2026 15:17:37 Africa/Abidjan] PHP   3. base64_encode($string = NULL) C:\wamp64\www\OIACAFECACAO\admin\filieres.php:217
+[03-Jul-2026 15:17:46 Africa/Abidjan] PHP Deprecated:  base64_encode(): Passing null to parameter #1 ($string) of type string is deprecated in C:\wamp64\www\OIACAFECACAO\admin\filieres.php on line 217
+[03-Jul-2026 15:17:46 Africa/Abidjan] PHP Stack trace:
+[03-Jul-2026 15:17:46 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[03-Jul-2026 15:17:46 Africa/Abidjan] PHP   2. require_once() C:\wamp64\www\OIACAFECACAO\index.php:66
+[03-Jul-2026 15:17:46 Africa/Abidjan] PHP   3. base64_encode($string = NULL) C:\wamp64\www\OIACAFECACAO\admin\filieres.php:217
+[03-Jul-2026 15:17:46 Africa/Abidjan] PHP Deprecated:  base64_encode(): Passing null to parameter #1 ($string) of type string is deprecated in C:\wamp64\www\OIACAFECACAO\admin\filieres.php on line 217
+[03-Jul-2026 15:17:46 Africa/Abidjan] PHP Stack trace:
+[03-Jul-2026 15:17:46 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[03-Jul-2026 15:17:46 Africa/Abidjan] PHP   2. require_once() C:\wamp64\www\OIACAFECACAO\index.php:66
+[03-Jul-2026 15:17:46 Africa/Abidjan] PHP   3. base64_encode($string = NULL) C:\wamp64\www\OIACAFECACAO\admin\filieres.php:217
+[03-Jul-2026 15:17:46 Africa/Abidjan] PHP Deprecated:  base64_encode(): Passing null to parameter #1 ($string) of type string is deprecated in C:\wamp64\www\OIACAFECACAO\admin\filieres.php on line 217
+[03-Jul-2026 15:17:46 Africa/Abidjan] PHP Stack trace:
+[03-Jul-2026 15:17:46 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[03-Jul-2026 15:17:46 Africa/Abidjan] PHP   2. require_once() C:\wamp64\www\OIACAFECACAO\index.php:66
+[03-Jul-2026 15:17:46 Africa/Abidjan] PHP   3. base64_encode($string = NULL) C:\wamp64\www\OIACAFECACAO\admin\filieres.php:217
+[06-Jul-2026 13:36:41 Africa/Abidjan] PHP Deprecated:  Function strftime() is deprecated in C:\wamp64\www\OIACAFECACAO\views\medias\agenda.php on line 26
+[06-Jul-2026 13:36:41 Africa/Abidjan] PHP Stack trace:
+[06-Jul-2026 13:36:41 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[06-Jul-2026 13:36:41 Africa/Abidjan] PHP   2. HomeController->agenda() C:\wamp64\www\OIACAFECACAO\index.php:116
+[06-Jul-2026 13:36:41 Africa/Abidjan] PHP   3. require_once() C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:340
+[06-Jul-2026 13:40:03 Africa/Abidjan] PHP Deprecated:  Function strftime() is deprecated in C:\wamp64\www\OIACAFECACAO\views\medias\agenda.php on line 26
+[06-Jul-2026 13:40:03 Africa/Abidjan] PHP Stack trace:
+[06-Jul-2026 13:40:03 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[06-Jul-2026 13:40:03 Africa/Abidjan] PHP   2. HomeController->agenda() C:\wamp64\www\OIACAFECACAO\index.php:116
+[06-Jul-2026 13:40:03 Africa/Abidjan] PHP   3. require_once() C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:340
+[06-Jul-2026 13:40:08 Africa/Abidjan] PHP Deprecated:  Function strftime() is deprecated in C:\wamp64\www\OIACAFECACAO\views\medias\agenda.php on line 26
+[06-Jul-2026 13:40:08 Africa/Abidjan] PHP Stack trace:
+[06-Jul-2026 13:40:08 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[06-Jul-2026 13:40:08 Africa/Abidjan] PHP   2. HomeController->agenda() C:\wamp64\www\OIACAFECACAO\index.php:116
+[06-Jul-2026 13:40:08 Africa/Abidjan] PHP   3. require_once() C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:340
+[06-Jul-2026 13:40:30 Africa/Abidjan] PHP Deprecated:  Function strftime() is deprecated in C:\wamp64\www\OIACAFECACAO\views\medias\agenda.php on line 26
+[06-Jul-2026 13:40:30 Africa/Abidjan] PHP Stack trace:
+[06-Jul-2026 13:40:30 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[06-Jul-2026 13:40:30 Africa/Abidjan] PHP   2. HomeController->agenda() C:\wamp64\www\OIACAFECACAO\index.php:116
+[06-Jul-2026 13:40:30 Africa/Abidjan] PHP   3. require_once() C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:340
+[06-Jul-2026 13:43:06 Africa/Abidjan] PHP Deprecated:  Function strftime() is deprecated in C:\wamp64\www\OIACAFECACAO\views\medias\agenda.php on line 28
+[06-Jul-2026 13:43:06 Africa/Abidjan] PHP Stack trace:
+[06-Jul-2026 13:43:06 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[06-Jul-2026 13:43:06 Africa/Abidjan] PHP   2. HomeController->agenda() C:\wamp64\www\OIACAFECACAO\index.php:116
+[06-Jul-2026 13:43:06 Africa/Abidjan] PHP   3. require_once() C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:334
+[06-Jul-2026 17:41:57 Africa/Abidjan] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 La table 'oia_cafecacao.projects' n'existe pas in C:\wamp64\www\OIACAFECACAO\config\database.php:42
+Stack trace:
+#0 C:\wamp64\www\OIACAFECACAO\config\database.php(42): PDO->prepare('INSERT INTO `pr...')
+#1 C:\wamp64\www\OIACAFECACAO\config\database.php(72): Database->query('INSERT INTO `pr...', Array)
+#2 C:\wamp64\www\OIACAFECACAO\models\Project.php(35): Database->insert('projects', Array)
+#3 C:\wamp64\www\OIACAFECACAO\admin\projects-edit.php(33): Project->create(Array)
+#4 {main}
+  thrown in C:\wamp64\www\OIACAFECACAO\config\database.php on line 42
+[06-Jul-2026 18:03:30 Africa/Abidjan] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 La table 'oia_cafecacao.projects' n'existe pas in C:\wamp64\www\OIACAFECACAO\config\database.php:42
+Stack trace:
+#0 C:\wamp64\www\OIACAFECACAO\config\database.php(42): PDO->prepare('INSERT INTO `pr...')
+#1 C:\wamp64\www\OIACAFECACAO\config\database.php(72): Database->query('INSERT INTO `pr...', Array)
+#2 C:\wamp64\www\OIACAFECACAO\models\Project.php(35): Database->insert('projects', Array)
+#3 C:\wamp64\www\OIACAFECACAO\admin\projects-edit.php(57): Project->create(Array)
+#4 {main}
+  thrown in C:\wamp64\www\OIACAFECACAO\config\database.php on line 42
+[06-Jul-2026 18:19:21 Africa/Abidjan] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Champ 'end_date' inconnu dans field list in C:\wamp64\www\OIACAFECACAO\config\database.php:42
+Stack trace:
+#0 C:\wamp64\www\OIACAFECACAO\config\database.php(42): PDO->prepare('INSERT INTO `pr...')
+#1 C:\wamp64\www\OIACAFECACAO\config\database.php(72): Database->query('INSERT INTO `pr...', Array)
+#2 C:\wamp64\www\OIACAFECACAO\models\Project.php(35): Database->insert('projects', Array)
+#3 C:\wamp64\www\OIACAFECACAO\admin\projects-list.php(77): Project->create(Array)
+#4 C:\wamp64\www\OIACAFECACAO\index.php(66): require_once('C:\\wamp64\\www\\O...')
+#5 {main}
+  thrown in C:\wamp64\www\OIACAFECACAO\config\database.php on line 42
+[06-Jul-2026 18:19:34 Africa/Abidjan] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Champ 'end_date' inconnu dans field list in C:\wamp64\www\OIACAFECACAO\config\database.php:42
+Stack trace:
+#0 C:\wamp64\www\OIACAFECACAO\config\database.php(42): PDO->prepare('INSERT INTO `pr...')
+#1 C:\wamp64\www\OIACAFECACAO\config\database.php(72): Database->query('INSERT INTO `pr...', Array)
+#2 C:\wamp64\www\OIACAFECACAO\models\Project.php(35): Database->insert('projects', Array)
+#3 C:\wamp64\www\OIACAFECACAO\admin\projects-list.php(77): Project->create(Array)
+#4 C:\wamp64\www\OIACAFECACAO\index.php(66): require_once('C:\\wamp64\\www\\O...')
+#5 {main}
+  thrown in C:\wamp64\www\OIACAFECACAO\config\database.php on line 42
+[10-Jul-2026 12:31:46 Africa/Abidjan] PHP Warning:  require_once(C:\wamp64\www\OIACAFECACAO\views\qui-sommes-nous/../views/qui-sommes-nous/index.php): Failed to open stream: No such file or directory in C:\wamp64\www\OIACAFECACAO\views\qui-sommes-nous\structure.php on line 1
+[10-Jul-2026 12:31:46 Africa/Abidjan] PHP Stack trace:
+[10-Jul-2026 12:31:46 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[10-Jul-2026 12:31:46 Africa/Abidjan] PHP   2. HomeController->structureOrganisationnelle() C:\wamp64\www\OIACAFECACAO\index.php:91
+[10-Jul-2026 12:31:46 Africa/Abidjan] PHP   3. require_once() C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:343
+[10-Jul-2026 12:31:46 Africa/Abidjan] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\wamp64\www\OIACAFECACAO\views\qui-sommes-nous/../views/qui-sommes-nous/index.php' (include_path='.;C:\php\pear') in C:\wamp64\www\OIACAFECACAO\views\qui-sommes-nous\structure.php:1
+Stack trace:
+#0 C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php(343): require_once()
+#1 C:\wamp64\www\OIACAFECACAO\index.php(91): HomeController->structureOrganisationnelle()
+#2 {main}
+  thrown in C:\wamp64\www\OIACAFECACAO\views\qui-sommes-nous\structure.php on line 1
+[13-Jul-2026 14:43:39 Africa/Abidjan] PHP Warning:  Undefined variable $cta_org_text in C:\wamp64\www\OIACAFECACAO\views\qui-sommes-nous\president.php on line 125
+[13-Jul-2026 14:43:39 Africa/Abidjan] PHP Stack trace:
+[13-Jul-2026 14:43:39 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[13-Jul-2026 14:43:39 Africa/Abidjan] PHP   2. HomeController->president() C:\wamp64\www\OIACAFECACAO\index.php:89
+[13-Jul-2026 14:43:39 Africa/Abidjan] PHP   3. require_once() C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:338
+[13-Jul-2026 14:43:39 Africa/Abidjan] PHP Warning:  Undefined variable $cta_partners_text in C:\wamp64\www\OIACAFECACAO\views\qui-sommes-nous\president.php on line 126
+[13-Jul-2026 14:43:39 Africa/Abidjan] PHP Stack trace:
+[13-Jul-2026 14:43:39 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[13-Jul-2026 14:43:39 Africa/Abidjan] PHP   2. HomeController->president() C:\wamp64\www\OIACAFECACAO\index.php:89
+[13-Jul-2026 14:43:39 Africa/Abidjan] PHP   3. require_once() C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:338
+[13-Jul-2026 16:27:08 Africa/Abidjan] PHP Warning:  Undefined property: HomeController::$banner in C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php on line 214
+[13-Jul-2026 16:27:08 Africa/Abidjan] PHP Stack trace:
+[13-Jul-2026 16:27:08 Africa/Abidjan] PHP   1. {main}() C:\wamp64\www\OIACAFECACAO\index.php:0
+[13-Jul-2026 16:27:08 Africa/Abidjan] PHP   2. HomeController->index() C:\wamp64\www\OIACAFECACAO\index.php:79
+[13-Jul-2026 16:27:08 Africa/Abidjan] PHP Fatal error:  Uncaught Error: Call to a member function findAll() on null in C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php:214
+Stack trace:
+#0 C:\wamp64\www\OIACAFECACAO\index.php(79): HomeController->index()
+#1 {main}
+  thrown in C:\wamp64\www\OIACAFECACAO\controllers\HomeController.php on line 214
+[13-Jul-2026 17:31:41 UTC] PHP Warning:  Undefined array key "HTTP_HOST" in C:\wamp64\www\OIACAFECACAO\config\config.php on line 23
